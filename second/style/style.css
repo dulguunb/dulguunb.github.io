@@ -31,9 +31,12 @@ body {
 }
 #terminal{
   background-color: rgba(37,37,37,1);
-  color : gray;
+  color : white;
   border: 1px solid #c9c9c9;
   transition: all ease-in-out .3s;
+}
+.important_{
+  color:red;
 }
 #terminalHeader{
   background-color: #eee;
