@@ -1,4 +1,7 @@
-
+window.onload = function()
+{
+		document.getElementById("prompt").focus();
+}
 var app = {
 	initalize : function()
 	{
@@ -6,7 +9,7 @@ var app = {
 	},
 	enterEvent : function(e)
 	{
-		var key = e.which || e.keyCode;
+		  var key = e.which || e.keyCode;
     	if (key === 13) { // 13 is enter
     		alert('aww yeah');
 				var promptValue = document.getElementById("prompt").value;
