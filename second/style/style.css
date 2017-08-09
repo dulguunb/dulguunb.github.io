@@ -9,7 +9,7 @@ body {
   background-color: #555;
   background: url("../assets/gif/showme.gif");
   background-size: cover;
-  overflow: hidden;
+//overflow: hidden;
 }
 @media screen and (min-width: 320) {
     .window  {
@@ -29,7 +29,17 @@ body {
     height: 550px;
   }
 }
-
+#terminal{
+  background-color: rgba(37,37,37,1);
+  color : gray;
+  border: 1px solid #c9c9c9;
+  transition: all ease-in-out .3s;
+}
+#terminalHeader{
+  background-color: #eee;
+  height: 25px;
+  text-align: center;
+}
 
 .window {
   width: 340px;
