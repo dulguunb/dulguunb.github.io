@@ -34,7 +34,8 @@ body {
 .window {
   width: 450px;
   height: 250px;
-  background-color: rgba(37,37,37,.85);
+  background-color: rgba(37,37,37,1);
+  color : gray;
   border: 1px solid #c9c9c9;
   transition: all ease-in-out .3s;
 }

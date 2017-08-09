@@ -1,7 +1,5 @@
 
-
 var app = {
-
 	initalize : function()
 	{
 	document.getElementById('prompt').addEventListener('keypress',this.enterEvent);
@@ -18,6 +16,7 @@ var app = {
 					}
 					else {
 						document.body.style.background = "url('assets/gif/notcool.gif')";
+						document.getElementsByClassName("consoleoutput")[0].innerHTML = "<p> boooo not cool boo not cool  </p> <p> HTTP request sent , awaiting response ... 404 Not Found </p> <p> Changing background image to not cool</p>";
 					}
 			}
 	}
