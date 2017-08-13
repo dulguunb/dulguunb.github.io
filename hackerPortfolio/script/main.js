@@ -25,7 +25,7 @@ var domChanger  = {
 			var node = document.createTextNode(important);
 			p.className = "important_";
 			p.appendChild(node);
-			
+
 			if(className){
 				var consoleHead = document.getElementsByClassName(elementName)[classNo];
 				consoleHead.appendChild(p);
@@ -43,7 +43,7 @@ var domChanger  = {
 		},
 		consolOutputInit : function(consoleOutputTxt,boo)
 		{
-			  this.consoleOutputCount++;
+			    this.consoleOutputCount++;
 				var headConsole = document.getElementsByClassName("consoleoutputHead")[0];
 				this.stringSeperate(consoleOutputTxt);
 				console.log(this.consoleOutputArr);
@@ -111,7 +111,7 @@ var app = {
     	if (key === 13) { // 13 is enter
 				var promptValue = document.getElementById("prompt").value;
 					if(promptValue == 'Y' || promptValue == '' || promptValue == 'y'){
-						consoleAppInit.init("assets/gif/cool.gif","HTTP request sent, awaiting response... 302 Found;HTTP request sent, awaiting response... 200 OK;Changing Background Image ... Complete;Getting Shwifty ... Oh Yes!;","(--portfolio) to see portfolio");
+						consoleAppInit.init("assets/gif/cool.gif","HTTP request sent, awaiting response... 302 Found;HTTP request sent, awaiting response... 200 OK;Changing Background Image ... Complete;Getting Shwifty ... Oh Yes!;","(--portfolio) to see portfolio (still working on it :) stay tuned )");
 					}
 					else if (promptValue=="exit()") {
 
