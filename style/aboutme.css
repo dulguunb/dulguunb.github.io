@@ -2,23 +2,12 @@ body
 {
 	background-image : url("../img/aboutmeback.jpg") !important;
 	background-repeat: no-repeat;
-	min-height: 300px;
-    background-attachment: fixed;
-    background-position: center;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.section{
-	background-repeat: no-repeat;
-	min-height: 300px;
-	font-family: "Times New Roman", Times, serif;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 #sector1
 {
 	text-align: center;
@@ -28,7 +17,7 @@ body
 #sector2 {
     color: #fff;
     opacity: 0.9;
-    background-image: url(../img/aboutmesector2.jpg) !important;
+    background-image: url("../img/aboutmesector2.jpg") !important;
     position: relative;
 }
 div#sector2:after{
@@ -41,8 +30,16 @@ div#sector2:after{
     height: 100%;
     z-index: -1;
 }
-.buttunthing{
-  display: inline;
+.container-1{
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttonthing1{
+    display:inline;
+}
+
+.buttonthing2{
+    display:inline;
 }
 .btn
 {
