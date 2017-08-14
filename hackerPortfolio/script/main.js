@@ -97,7 +97,7 @@ var consoleAppInit = {
         if (key === 13) { // 13 is enter
             var promptValue = document.getElementById("prompt2").value;
             if (promptValue == "--portfolio") {
-                domChanger.consoleOutputInit("Portfolio is initalizing......Success;Loading......done;##NAME##: Dulguun;##PROJECTS/EXPERIENCE##: i publish my projects on http://github.com/dulguunb, and i worked in the company called Asura in Budapest for 2 months;##SKILLS##: Web based application development on LAMP . Android based application development on Cordova. Desktop based Application development on QT C++;##LANGUAGES##: C++,javascript,php,python,shellscript;##OS##: i mostly work on Linux and i can work on Windows as well;", false, "consoleoutputHead", 0, true);
+                domChanger.consoleOutputInit("Portfolio is initalizing......Success;Loading......done;Reading manifest.json .... done ;##NAME##: Dulguun;##PROJECTS/EXPERIENCE##: i publish my projects on http://github.com/dulguunb, and i worked in the company called Asura in Budapest for 2 months;##SKILLS##: Web based application development on LAMP . Android based application development on Cordova. Desktop based Application development on QT C++;##LANGUAGES##: C++,javascript,php,python,shellscript;##OS##: i mostly work on Linux and i can work on Windows as well;", false, "consoleoutputHead", 0, true);
 
             }
 
