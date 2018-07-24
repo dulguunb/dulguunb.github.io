@@ -1,0 +1,44 @@
+<div (scroll)="onScroll($event)" class="container">
+<mat-grid-list cols="1" rowHeight="300px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [ngStyle]="{
+        'background': 'url(' + tile.background + ')  no-repeat center center fixed',
+        'background-size': 'cover',
+        'color':'white',
+        'height': '60%',
+        'background-size': ' cover'
+        }">
+  
+  <div 
+    [ngStyle]="{
+    'height' : '90%',
+    'position' : 'relative',
+    'margin-left' : '-' + leftAstr + 'px',
+    'margin-right' : rightAstr + 'px'
+  }">
+
+    <img 
+    *ngFor="let image of tile.images"
+    
+    [ngStyle]="{
+      'height' : '90%'
+    }" 
+    class='dulguun-astronaut' [src]="image"/>
+
+  </div>
+
+  <div class="text" [ngStyle]="{
+    'color': 'white',
+    'z-index': '1',
+    'position': 'absolute'
+  }">
+   <h1> {{tile.title}} </h1>
+   <p> {{tile.text}} </p>
+  <p > {{tile.images}}</p>
+  </div>
+  </mat-grid-tile>
+</mat-grid-list>
+</div>
