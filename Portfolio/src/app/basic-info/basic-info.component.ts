@@ -7,38 +7,46 @@ import { HostListener} from "@angular/core";
 })
 
 export class BasicInfoComponent implements OnInit {
-  rightAstr: any = 0;
-  leftAstr:  any = 0;
-  firstAstr: number = 3;
-  secondAstr: number = 4;
+  yAxis: number = 30;
   constructor() { }
   tiles:any[];
   images:any[];
   ngOnInit() {
     this.tiles = [ 
-      {text: 'Hi, My name is Dulguun', title:'About me',
+      {texts: [" I am glad you're here :)"], title:'Hello World!',
        cols: 1,  
-       rows: 2, 
+       rows: 3,
+       top: 4,
+       left: 0,
+       right: 0,
+       bottom: 0,
        direction: -1,
        background: 'assets/a1/astr1-background.png',
-       images: ['assets/a1/astr1-dulguun2.png']
+       images: ['assets/a1/rocket1.png']
       },
-
-       {text: '', 
-        title:'Page2',
-        cols: 1,
-        rows: 2,  
-        direction: 1,
-        background: 'assets/a1/astr2-background.png',
-        images: ['assets/a1/astr2-dulguun2.png','assets/a1/astr1-dulguun2.png'],
-      },
+      {title:'Who is drifting in the space?',
+      texts: ["Hi, My name is Dulguun. I am currently pursuing a Bachelor of Computer Science."
+              ,"I'm fond of creating web/mobile/desktop applications. I can create mid-sized web applications (including front and back-ends).", 
+              "I am well versed with: Angular, Nodejs, C++, Python, [JavaFX,JPA], LAMP Stack , MEAN stack"],  
+      cols: 1,  
+      rows: 3,
+      top: 0,
+      left: 0,
+      right: 2,
+      bottom: 0,
+      direction: -1,
+      background: 'assets/a1/astr1-background.png',
+      images: [
+      'assets/a1/astr1-dulguun1.png',
+      'assets/a1/astr1-dulguun2.png',
+      'assets/a1/astr1-dulguun3.png']
+     },
     ];
   }
   ngOnDestroy() {
   }
   @HostListener("window:scroll", ['$event'])
   onScroll(event) {
-    this.leftAstr = event.pageY * 5;
-  //  this.rightAstr = event.pageY * 5;
+    this.yAxis = (event.pageY);
   }
 }

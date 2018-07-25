@@ -1,5 +1,14 @@
+<mat-toolbar  color="basic">
+  <button mat-fab >Dulguun</button>
+  <button routerLink='/aboutme' mat-button>About me</button>
+  <button mat-button>Contact</button>
+  <button mat-button>Blog</button>
+</mat-toolbar>
+
+
 <div (scroll)="onScroll($event)" class="container">
 <mat-grid-list cols="1" rowHeight="300px">
+
   <mat-grid-tile
     *ngFor="let tile of tiles"
       [colspan]="tile.cols"
@@ -16,13 +25,13 @@
     [ngStyle]="{
     'height' : '90%',
     'position' : 'relative',
-    'margin-left' : '-' + leftAstr + 'px',
-    'margin-right' : rightAstr + 'px'
+    'margin-top' :  tile.top * yAxis * tile.direction + 'px',
+    'margin-left' : tile.left * yAxis * tile.direction + 'px',
+    'margin-right': tile.right * yAxis * tile.direction + 'px',
+    'margin-bottom':   tile.bottom * yAxis * tile.direction + 'px'
   }">
-
     <img 
     *ngFor="let image of tile.images"
-    
     [ngStyle]="{
       'height' : '90%'
     }" 
@@ -34,11 +43,16 @@
     'color': 'white',
     'z-index': '1',
     'position': 'absolute'
+    
   }">
-   <h1> {{tile.title}} </h1>
-   <p> {{tile.text}} </p>
-  <p > {{tile.images}}</p>
+  <mat-card>
+  <mat-card-title class="tile-title"> {{tile.title}} </mat-card-title>
+    <mat-card-content *ngFor="let text of tile.texts">
+        {{text}}
+    </mat-card-content>
+   </mat-card>
   </div>
+
   </mat-grid-tile>
 </mat-grid-list>
 </div>

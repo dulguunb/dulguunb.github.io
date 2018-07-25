@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { BasicInfoComponent } from './basic-info/basic-info.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './/app-routing.module';
+import { AboutmeComponent } from './aboutme/aboutme.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BasicInfoComponent
+    BasicInfoComponent,
+    AboutmeComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatMenuModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatToolbarModule,
+    AppRoutingModule,
   ],
   exports:[
     MatCardModule,
@@ -26,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatMenuModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
