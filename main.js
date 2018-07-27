@@ -353,7 +353,12 @@ var BasicInfoComponent = /** @class */ (function () {
     BasicInfoComponent.prototype.ngOnDestroy = function () {
     };
     BasicInfoComponent.prototype.onScroll = function (event) {
-        this.yAxis = (event.pageY);
+        if (event.pageY === undefined) {
+            this.yAxis = event.path[1].scrollY; //for Chrome  
+        }
+        else {
+            this.yAxis = (event.pageY); // for mozila
+        }
         console.log(this.yAxis);
     };
     __decorate([
