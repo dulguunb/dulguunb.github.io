@@ -11,10 +11,7 @@ export class AboutmeComponent implements OnInit {
 
   ngOnInit() {
     this.tiles = [
-      {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-      {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-      {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-      {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+      {title: 'About Me', content: 'Hi, My Name is Dulguun' ,image:'https://scontent.fuln7-1.fna.fbcdn.net/v/t1.0-9/27459330_558321701193384_1684160613539778627_n.jpg?_nc_cat=0&oh=b9c0f7e97190c4d6b5904c7c6f9b5778&oe=5BD7400C'},
     ];
   }
 

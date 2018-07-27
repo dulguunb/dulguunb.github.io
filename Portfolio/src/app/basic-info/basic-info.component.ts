@@ -24,22 +24,21 @@ export class BasicInfoComponent implements OnInit {
        background: 'assets/a1/astr1-background.png',
        images: ['assets/a1/rocket1.png']
       },
-      {title:'Who is drifting in the space?',
+
+      {title:'Who is drifting into the space?',
       texts: ["Hi, My name is Dulguun. I am currently pursuing a Bachelor of Computer Science."
-              ,"I'm fond of creating web/mobile/desktop applications. I can create mid-sized web applications (including front and back-ends).", 
-              "I am well versed with: Angular, Nodejs, C++, Python, [JavaFX,JPA], LAMP Stack , MEAN stack"],  
+              ,"I'm fond of creating web/mobile/desktop applications"],  
       cols: 1,  
       rows: 3,
       top: 0,
-      left: 0,
-      right: 2,
+      left: 1,
+      right: 0,
       bottom: 0,
       direction: -1,
       background: 'assets/a1/astr1-background.png',
       images: [
       'assets/a1/astr1-dulguun1.png',
-      'assets/a1/astr1-dulguun2.png',
-      'assets/a1/astr1-dulguun3.png']
+      'assets/a1/astr1-dulguun2.png']
      },
     ];
   }
@@ -48,5 +47,6 @@ export class BasicInfoComponent implements OnInit {
   @HostListener("window:scroll", ['$event'])
   onScroll(event) {
     this.yAxis = (event.pageY);
+    console.log(this.yAxis);
   }
 }

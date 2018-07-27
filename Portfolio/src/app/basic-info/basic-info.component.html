@@ -1,3 +1,4 @@
+
 <mat-toolbar  color="basic">
   <button mat-fab >Dulguun</button>
   <button routerLink='/aboutme' mat-button>About me</button>
@@ -5,8 +6,7 @@
   <button mat-button>Blog</button>
 </mat-toolbar>
 
-
-<div (scroll)="onScroll($event)" class="container">
+<div (scroll)="onScroll($event)">
 <mat-grid-list cols="1" rowHeight="300px">
 
   <mat-grid-tile
@@ -23,12 +23,12 @@
   
   <div 
     [ngStyle]="{
-    'height' : '90%',
-    'position' : 'relative',
-    'margin-top' :  tile.top * yAxis * tile.direction + 'px',
-    'margin-left' : tile.left * yAxis * tile.direction + 'px',
-    'margin-right': tile.right * yAxis * tile.direction + 'px',
-    'margin-bottom':   tile.bottom * yAxis * tile.direction + 'px'
+    'height' :       '90%',
+    'position' :     'relative',
+    'margin-top' :   tile.top * yAxis * tile.direction + 'px',
+    'margin-left' :  tile.left * yAxis * tile.direction + 'px',
+    'margin-right':  tile.right * yAxis * tile.direction + 'px',
+    'margin-bottom': tile.bottom * yAxis * tile.direction + 'px'
   }">
     <img 
     *ngFor="let image of tile.images"
@@ -52,7 +52,6 @@
     </mat-card-content>
    </mat-card>
   </div>
-
   </mat-grid-tile>
 </mat-grid-list>
 </div>
