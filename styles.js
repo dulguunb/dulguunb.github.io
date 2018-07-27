@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/dulguun/GitHub/dulguunb.github.io/Portfolio/src/styles.css */"./src/styles.css");
-module.exports = __webpack_require__(/*! /home/dulguun/GitHub/dulguunb.github.io/Portfolio/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! /home/dulguun/GitHub/Portfolio/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /home/dulguun/GitHub/Portfolio/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 
 /***/ })
