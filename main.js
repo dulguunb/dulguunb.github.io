@@ -334,7 +334,7 @@ var BasicInfoComponent = /** @class */ (function () {
             },
             { title: 'Who is drifting into the space?',
                 texts: ["Hi, My name is Dulguun. I am currently pursuing a Bachelor of Computer Science.",
-                    "I'm fond of creating web/mobile/desktop applications"],
+                    "I'm fond of creating web/mobile/desktop applications. /The artworks are done by my lovely sister./"],
                 cols: 1,
                 rows: 3,
                 top: 0,
