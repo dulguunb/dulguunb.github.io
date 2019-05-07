@@ -1,0 +1,31 @@
+body{
+	background-image : url("../img/blogback5.jpg") !important;
+	background-repeat: no-repeat;
+	min-height: 300px;
+    font-family: "Times New Roman", Times, serif;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h4,h1,h2
+{
+    background-color:white;
+    text-align: center;
+}
+#back2{
+background-image : url("../img/blogback1.jpg") !important;
+}
+.thumbnailPicture{
+	width: 150px;
+}
+.picture{
+	border: 1px solid #ddd;
+    border-radius: 4px; 
+    padding: 5px; 
+    width: 250px; 
+}
+.picture:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+

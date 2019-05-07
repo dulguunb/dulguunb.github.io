@@ -1,0 +1,28 @@
+body { 
+font-size: 20px;  
+color: #000000;  
+background-color: #FFFFFF;  
+} 
+h1{ 
+ color: #000000;
+} 
+  #titleForNote
+  {
+  	display: none;
+  }
+  #takeNote
+  {
+display:none;
+  }
+  label
+  {
+  	display:none;
+  }
+  .jumbotron
+  {
+  	display: none;
+  }
+  #sector2
+  {
+  	display: inline !important;
+  }
