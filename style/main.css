@@ -1,0 +1,16 @@
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:  #201D1E;
+    color: whitesmoke;
+
+}
+.header{
+    text-align: center;
+    background: #fcb127;
+}
+#feed{
+    float: right;
+}
+#body{
+    position: absolute;
+}

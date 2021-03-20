@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dulguun on Code</title>
+        <link rel="stylesheet" href="style/main.css">
+        
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="header_name">Dulguun on Code</h1>
+        </div>
+        <div id="body">
+        </div>
+        <div id="feed">
+            <ul id="feed_list"></ul>
+        </div>
+        <script >
+            let body = document.getElementById("body");
+            let posts = [
+                {
+                    topic: "Concurrent Programming",
+                    name: "Introduction To Concurrancy",
+                    date: "2021/03/20"
+                }
+            ];
+            let ul = document.getElementById("feed_list");
+            posts.forEach(post => {
+                let name = post.name;
+                let date = post.date;
+                let li = document.createElement("li");
+                let link = document.createElement("a");
+                link.appendChild( document.createTextNode(name + " - " + date) );
+                link.href = `pages/${name.split(" ").join("")}.html`
+                li.appendChild(link);
+                ul.appendChild(li);
+            });
+        </script>
+    </body>
+</html>
