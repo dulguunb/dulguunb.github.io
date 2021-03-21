@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dulguun on Code</title>
+        <link rel="stylesheet" href="../style/main.css">
+        
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1 class="header_name"> <a href="http://dulguunbold.me"> Dulguun on Code </a> | <a href="">About</a></h1>
+            </header>
+                <div class="wrapper clearfix">
+                    <!-- <nav>
+                        <ul id="feed_list"></ul>
+                    </nav> -->
+                <section>
+                    <div>
+                        <h1> Task Level Parallelism </h1>
+                            <p>Java's fork/join framework allows us to create a parallel program. 
+                            The asynchronous pattern is used mainly when the program needs to access I/O or Network because such operations block the main thread.
+                            We can schedule another task while the computer calculates the blocking task.
+                            In the Java programming language, we can create a task level parallelism aka async calls using a fork and join operations.
+                            To implement task-level parallelism, the class must inherit RecrusiveAction class and override the compute method.
+                            The compute method must contain the code that solves the problem. The compute method contains recursive calls.
+                            I will implement a class called HttpsRequest that sends HTTPS GET request to the top 48 websites asynchronously with four tasks and compare it with the sequential version. 
+                            The parallel version with four tasks took 2.5 minutes to complete whereas the sequential version took 7.8 minutes to complete.
+                            sendRequestsAsync  took 151789ms (2.529817 minutes)
+                            sendSequentialHttpsRequest took 469842ms (7.83 minutes)
+                            As you can see the task-level parallelism can seriously save a lot of time.
+                            As I mentioned previously, compute method needs to be recursive. The base case needs to occur
+                            when the size of the problem is below the threshold (if it's not clear please refer to the java fork/join tutorial page)
+                            <script src="https://gist.github.com/dulguunb/061a600d21640543cf608bb3ecf1ce5d.js"></script>
+                            endIndexExclusive contains the array's end limit and startIndexInclusive holds the start of the array.
+                            When they are below a certain threshold we will simply send HTTP GET requests synchronously(directly).
+                            The recursive part of the case occurs when they are above a certain threshold.
+                            <script src="https://gist.github.com/dulguunb/11049635ee1eb3f7667e8a480755a9c7.js"></script>
+                            In the recursive case, we divide the array of URLs into two parts left and right. 
+                            Then we will invoke the fork/join method on the left part of the array and recursively call the compute method on the right part of the array. 
+                            Beware that fork needs to be called first and join at the end. 
+                            We'd like to create a general function that takes the "number of tasks" and URLs as a parameter and uses the HttpsRequest class to send the request to the URLs.
+                            To do this, we need to invoke the fork method with the number of tasks minus 1 (it's three in our example) then invoke the join method afterward. 
+                            Between these two "fork/join" calls, we need to call the compute method. The reason is that at least one of the tasks needs to run synchronously.
+                            <script src="https://gist.github.com/dulguunb/10f8f8b29cd2debc7cee574f348164e0.js"></script>
+                            <code>getChunkInclusive</code> and <code>getChunkEndExclusive</code> are auxiliary methods that help us to calculate the URL chunks that correspond to the task.
+                            For instance, when the number of URLs is 48 the first task will contain 12 URLs, the second will contain 12, the third will contain 12 and the last one will contain 12.
+                            You can see the asynchronous in action if you check the below log. The program sends GET requests to websites simultanously. And it doesn't wait till the response arrives.
+<code>
+<p>sending GET request to https://myshopify.com</p>
+<p>sending GET request to https://amazon.co.jp</p>
+<p>https://myshopify.com responds with 404</p>
+<p>sending GET request to https://naver.com</p>
+<p>https://amazon.co.jp responds with 200</p>
+</code>
+                        You can find the complete code below
+                        <script src="https://gist.github.com/dulguunb/dbea6dba1d07d635b4215edff3ad9ee9.js"></script>
+
+                            </p>
+                    </div>
+                </section>
+            </div>
+            <footer></footer>
+        </div>
+    </body>
+</html>
