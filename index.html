@@ -6,34 +6,24 @@
         
     </head>
     <body>
-        <div class="header">
-            <h1 class="header_name">Dulguun on Code</h1>
+        <div id="container">
+            <header>
+                <h1 class="header_name"> <a href="http://dulguunbold.me"> Dulguun on Code </a> | <a href="">About</a></h1>
+            </header>
+                <div class="wrapper clearfix">
+                    <nav>
+                        <ul id="feed_list"></ul>
+                    </nav>
+                <section>
+                    <div>
+                     Hi, My name is Dulguun and I store some of my experiments and materials I studied.
+                     I decided to share it here because I thought it could be useful for people who are studying/solving the same kind of problems.
+                    </div>
+                </section>
+            </div>
+            <footer></footer>
         </div>
-        <div id="body">
-        </div>
-        <div id="feed">
-            <ul id="feed_list"></ul>
-        </div>
-        <script >
-            let body = document.getElementById("body");
-            let posts = [
-                {
-                    topic: "Concurrent Programming",
-                    name: "Introduction To Concurrancy",
-                    date: "2021/03/20"
-                }
-            ];
-            let ul = document.getElementById("feed_list");
-            posts.forEach(post => {
-                let name = post.name;
-                let date = post.date;
-                let li = document.createElement("li");
-                let link = document.createElement("a");
-                link.appendChild( document.createTextNode(name + " - " + date) );
-                link.href = `pages/${name.split(" ").join("")}.html`
-                li.appendChild(link);
-                ul.appendChild(li);
-            });
-        </script>
+        <script src="scripts/posts.js"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>
