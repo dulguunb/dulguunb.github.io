@@ -27,13 +27,13 @@
                     we still have a similar concept to "guest OS" because the container requires a "base image" to start with. One difference between "base image" in the container and the VM "guest OS" is "base image" doesn't contain the kernel.
                     <h2>Dockerfile</h2>
                     Dockerfile is a text file that contains the snapshot of how your container should look like. People usually call it "Image".
-                    The most elementary image can contain the "guest OS". For instance, I use ubuntu in for my containers. Below code shows what my usual Dockerfile looks like.
+                    The most elementary usually contain the operating system. However, this operating system is different than full blown "guest OS" in VM. For instance, I use ubuntu for my containers. Below code shows what my usual Dockerfile looks like.
                     <script src="https://gist.github.com/dulguunb/4f79ad30016acb4229fc68d39861533c.js"></script>
                     <code>FROM</code> keyword indicates what is the base image you want to use. <code>RUN</code> indicates after installing the base image, what command you want to run.
                     <code>VOLUME</code> indicates what is the volume you want to mount to the container.
-                    <code>WORKDIR</code> keyword indicates, what is the first directory it will open up when execute shell in the container.
+                    <code>WORKDIR</code> keyword indicates, what is the first directory it will open up when execute you shell in the container.
                     <br>
-                    To instantiate this image, you need to build it using this command: <code> docker build -t="my_container" . </code>
+                    To build this image, you need this command: <code> docker build -t="my_container" . </code>
                     <br>
                     -t stands for tag. Man page of "docker build" describes this:
                     <br>
