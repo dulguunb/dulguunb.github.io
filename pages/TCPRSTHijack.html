@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dulguun on Code</title>
+        <link rel="stylesheet" href="../style/main.css">
+        
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1 class="header_name"> <a href="https://dulguunb.github.io/"> Dulguun on Code </a> | <a href="">About</a></h1>
+            </header>
+                <div class="wrapper clearfix">
+                    <!-- <nav>
+                        <ul id="feed_list"></ul>
+                    </nav> -->
+                <section>
+                    <div>
+                      I have been reading a book named Hacking The Art of Exploitation by Jon Erickson. This book was published in 2003 and some of the source code
+                      he used in the book is a little bit outdated because of the non-backward compatible changes in the libnet and libpcap libraries therefore I decided to renew the outdated code.
+                      In the chapter 0x460 TCP/IP Hijacking section of the book. Jon Erickson talks about how we can send TCP RST message in order to spoof the victim's traffic.
+                      The way how this attack will carry out is that the attacker sends authentic looking TCP RST message with the correct ACK sequence towards the victim and causing the victim's connection to be resetted.
+                      The way you would forge this packet is that you use BPF (Berkley Packet Filter). This BPF is sort of like a program where the statement gets compiled to assembly before being sent out to kernel.
+                      You can use <code>tcpdump</code> program to construct this statements. 
+                      <br>
+                      For instance:
+                      <code>sudo tcpdump -d "dst host 192.168.122.1"</code>compiles down to this code below:
+                      <br>
+                      <p>
+                        (000) ldh      [12]
+                        <br>
+                        (001) jeq      #0x800           jt 2    jf 4
+                        <br>
+                        (002) ld       [30]
+                        <br>
+                        (003) jeq      #0xc0a87a01      jt 8    jf 9
+                        <br>
+                        (004) jeq      #0x806           jt 6    jf 5
+                        <br>
+                        (005) jeq      #0x8035          jt 6    jf 9
+                        <br>
+                        (006) ld       [38]
+                        <br>
+                        (007) jeq      #0xc0a87a01      jt 8    jf 9
+                        <br>
+                        (008) ret      #262144
+                        <br>
+                        (009) ret      #0
+                      </p>
+                    <br>
+                    According to the RFC793 about <a href="https://datatracker.ietf.org/doc/html/rfc793#section-3.1">TCP header</a>
+                    The control bits are 6 bits data and it can be found in the 13th octet of the TCP Header. 
+                    <br>
+                    <code>
+                    RG: 100000
+                    <br>
+                    ACK: 010000
+                    <br>
+                    PSH: 001000
+                    <br>
+                    RST: 000100
+                    <br>
+                    SYN: 000010
+                    <br>
+                    FIN: 000001
+                    </code>
+                    <br>
+                    The flags are represented like this above.
+                    <p>
+                    To know if the certain flag is on you only need to do bitwise AND operation. For instance to know if ACK is turned on you can write bitwise rule like: 010000 & 010100 which gives you 010000. It means writing a filter like:
+                    <code>tcp[13] & 16</code> will be equal to 16. This statement even can be simplified :  tcp[tcpflags] & tcp-ack != 0 as the book states.
+                    The same kind of functionality can be implemented using libpcap and libnet libraries. However, the book used old libnet and libpcap libraries therefore it made the code in the book non-functional if you use the latest versions of the libraries.
+                    I went through the libnet and libpcap library documentations and produced the up-to-date code. I will walk through the changes of the libraries that are mentioned in the book and provide you the full source code at the end of the post.
+                    <p>
+                    In the book we used a struct named data_pass which contains the raw packet (u_char*) and libnet_handle (int) however they are not needed anymore because the new version of libnet already provides a context and we can use this context (libnet_t*) to construct the raw packets (u_char*)
+                    This context needs to be declared using <code>libnet_init()</code> function and this function takes the name of the device (/dev/) therefore the device needs to be found out in the beginning of the program. The function named pcap_lookupdev from libpcap is depcrecated instead we should use <code>pcap_findalldevs</code>. Which gives you back the list of available devices and you need to pick the first one in the linked list through "name" attribute.
+                    Once you obtained the device name you can create the libnet context through "libnet_init" function. Libnet also removed the use of libnet_name_resolve (it resolves domain name to IP address) instead you should use libnet_name2addr4 and provide the libnet context.
+                    Instead of sending the data_pass structure to the caught_packet procedure through pcap_loop procedure we need to send the libnet context variable. The name of the libnet_build_ip is also changed to libnet_build_ipv4 and a few more parameters are added. You can simply give 0 or NULL since they're not used. libnet_build_tcp procedure has more parameters as well for that you can also give 0 or NULL.
+                    </p>
+                    You can check out the full code below:
+                    <script src="https://gist.github.com/dulguunb/2b68e0033c4dbdd7c2ecec7aa5c86fb2.js"></script>
+
+                    You can compile the code with the same how it is compild in the book. A few macros were eliminated from the libnet library it seems because the command: libnet-config --defines gives you less macro names.
+
+                    <p></p>
+                    </p>
+                    </div>
+                </section>
+            </div>
+            <footer></footer>
+        </div>
+    </body>
+</html>
