@@ -1,29 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Dulguun on Code</title>
-        <link rel="stylesheet" href="style/main.css">
-        
-    </head>
-    <body>
-        <div id="container">
-            <header>
-                <h1 class="header_name"> <a href="https://dulguunb.github.io/"> Dulguun on Code </a> | <a href="">About</a></h1>
-            </header>
-                <div class="wrapper clearfix">
-                    <nav>
-                        <ul id="feed_list"></ul>
-                    </nav>
-                <section>
-                    <div>
-                     Hi, My name is Dulguun and I store some of my experiments and materials I studied.
-                     I decided to share it here because I thought it could be useful for people who are studying/solving the same kind of problems.
-                    </div>
-                </section>
-            </div>
-            <footer></footer>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulguun Bold - Infrastructure Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="logo">Dulguun Bold</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="https://blog.dulguun.site">Blog</a></li>
+            </ul>
         </div>
-        <script src="scripts/posts.js"></script>
-        <script src="scripts/main.js"></script>
-    </body>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Hello, I'm Dulguun Bold</h2>
+                <p class="tagline">Infrastructure Engineer | DevOps Developer | Software Engineer</p>
+                <div class="contact-info">
+                    <p>📧 <a href="mailto:contact@dulguun.site">contact@dulguun.site</a></p>
+                    <div class="social-links">
+                        <a href="https://github.com/dulguunb" target="_blank">GitHub</a>
+                        <a href="https://blog.dulguun.site" target="_blank">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h3>About Me</h3>
+                <p>
+                    My expertise spans across DevOps, cloud infrastructure, backend development, and system
+                    optimization. I'm passionate about building scalable, reliable systems and have hands-on
+                    experience with technologies like Kubernetes, AWS, Terraform, Go, Python, and C++.
+                </p>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <div class="container">
+                <h3>Professional Experience</h3>
+
+                <div class="job">
+                    <h4>Infrastructure Engineer - Rakuten Europe Bank</h4>
+                    <p class="job-period">September 2025 - Present</p>
+                    <ul>
+                        <li>AWS infrastructure development of banking system via OpenTofu/Terragrunt</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h4>Software and DevOps Developer - MSAID</h4>
+                    <p class="job-period">June 2024 – June 2025</p>
+                    <ul>
+                        <li>Developing and maintaining backend services and command line client using Go, PostgreSQL, Argoworkflow and Trino</li>
+                        <li>Designing and managing Kubernetes manifests and Helm charts for application deployment on AWS EKS</li>
+                        <li>Managing internal infrastructure using Terraform and Ansible across AWS and Hetzner</li>
+                        <li>Providing technical support and resolving customer issues</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h4>DevOps Developer (Working Student) - MSAID</h4>
+                    <p class="job-period">October 2021 – May 2024</p>
+                    <ul>
+                        <li>Infrastructure as Code (IaC) development using Terraform and Ansible for AWS and Hetzner</li>
+                        <li>Feature development in MSAID products using Cython, C++, and Python</li>
+                        <li>Optimized Windows TensorFlow library, achieving 2× performance improvement</li>
+                        <li>CI/CD pipelines, networking and automation with GitLab CI, Kubernetes and Golang</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h4>Software Developer - Ericsson</h4>
+                    <p class="job-period">September 2019 – September 2021</p>
+                    <ul>
+                        <li>Feature development in telephony application server using C++, Python, Perl, Helm, Docker, Bash and Openstack Heat</li>
+                        <li>Build system development using Perl, Python and Bash</li>
+                        <li>Network/user management troubleshooting using LDAP, ssh, net-tools, wireshark and tcpdump</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h3>Professional Skills</h3>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="skill-list">
+                            <li>Golang</li>
+                            <li>Python</li>
+                            <li>Bash</li>
+                            <li>PostgreSQL</li>
+                            <li>Rust</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>DevOps & Cloud</h4>
+                        <ul class="skill-list">
+                            <li>Kubernetes & Helm</li>
+                            <li>Terraform & Ansible</li>
+                            <li>AWS & GCP</li>
+                            <li>Argo Workflow</li>
+                            <li>Kustomize</li>
+                            <li>Traefik</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Monitoring & Observability</h4>
+                        <ul class="skill-list">
+                            <li>Prometheus & Grafana</li>
+                            <li>Loki</li>
+                            <li>ElasticSearch</li>
+                            <li>Fluentd</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Development Tools</h4>
+                        <ul class="skill-list">
+                            <li>Git & Gerrit</li>
+                            <li>Docker</li>
+                            <li>GitLab CI & GitHub Actions</li>
+                            <li>CMake</li>
+                            <li>Wireshark & net-tools</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>API & Protocols</h4>
+                        <ul class="skill-list">
+                            <li>OpenAPI</li>
+                            <li>gRPC</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <ul class="skill-list">
+                            <li><strong>English:</strong> Fluent</li>
+                            <li><strong>German:</strong> Upper Intermediate</li>
+                            <li><strong>Mongolian:</strong> Native</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h3>Check Out My Blog</h3>
+                <p>Read my latest posts and thoughts on software engineering, DevOps, and technology</p>
+                <a href="https://blog.dulguun.site" class="btn">Visit Blog</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dulguun Bold. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
